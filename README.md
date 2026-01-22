@@ -7,7 +7,7 @@ Frontend project built with **Vite**, **React 18**, **TypeScript**, **Tailwind C
 ## Requirements
 
 * Node.js **18.x or 20.x**
-* npm / pnpm / yarn
+* npm / pnpm / yarn 
 
 ---
 
