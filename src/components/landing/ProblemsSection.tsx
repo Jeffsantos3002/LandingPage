@@ -70,7 +70,7 @@ export const ProblemsSection = () => {
                     <span className="text-xs font-semibold uppercase tracking-wider text-destructive mb-1 block">
                       O Problema
                     </span>
-                    <p className="text-foreground font-medium">{item.problem}</p>
+                    <p className="text-foreground font-medium"></p>
                   </div>
                 </div>
               </div>
@@ -85,7 +85,7 @@ export const ProblemsSection = () => {
                     <span className="text-xs font-semibold uppercase tracking-wider text-primary mb-1 block">
                       Solução HipoRepo
                     </span>
-                    <p className="text-muted-foreground">{item.solution}</p>
+                    <p className="text-muted-foreground"></p>
                   </div>
                 </div>
               </div>
