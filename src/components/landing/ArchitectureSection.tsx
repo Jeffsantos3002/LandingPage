@@ -11,7 +11,7 @@ const capabilities = [
   {
     icon: Server,
     title: "Backend Robusto",
-    description: "Backend NestJS containerizado com Docker para fácil implantação",
+    description: "**************************************",
   },
   {
     icon: Database,

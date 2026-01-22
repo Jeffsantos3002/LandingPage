@@ -40,11 +40,11 @@ export const HeroSection = () => {
               para Documentos Institucionais
             </h1>
 
-            <p className="text-lg lg:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-8 leading-relaxed">
-              O HipoRepo vai além de drives genéricos, espelhando o organograma real da sua instituição—
-              <strong className="text-foreground">Departamentos</strong>,{" "}
-              <strong className="text-foreground">Subdepartamentos</strong>, e{" "}
-              <strong className="text-foreground">Bibliotecas</strong>—com controle granular de permissões e fluxos de governança.
+            <p className="text-lg lg:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-8 leading-relaxed gap-1">
+              O HipoRepo vai além de drives genéricos, espelhando o organograma real da sua instituição  
+              <strong className="text-foreground ml-1"> Setores</strong>,{" "}
+              <strong className="text-foreground">Subsetores</strong>, e{" "}
+              <strong className="text-foreground">Bibliotecas</strong> com controle granular de permissões e fluxos de governança.
             </p>
 
             {/* CTAs */}

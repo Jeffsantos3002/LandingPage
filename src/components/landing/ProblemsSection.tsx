@@ -10,7 +10,7 @@ const problems = [
   {
     icon: Shield,
     problem: "Não há controle sobre o que é publicado.",
-    solution: "Governança através de papéis definidos: Editores de Conteúdo enviam, Curadores revisam e aprovam—garantindo a conformidade.",
+    solution: "Governança através de papéis definidos: Editores de Conteúdo enviam, Curadores *************",
   },
   {
     icon: Plug,
@@ -19,8 +19,8 @@ const problems = [
   },
   {
     icon: FileCheck,
-    problem: "Arquivos não padronizados e fora de conformidade.",
-    solution: "Políticas de Formato de Arquivo validam e rejeitam arquivos fora dos padrões definidos (ex: apenas PDF/A).",
+    problem: "********************************************",
+    solution: "*****************************************************************************",
   },
 ];
 
