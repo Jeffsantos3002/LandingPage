@@ -7,36 +7,43 @@ import documento from "@/assets/funcionalidades/documento.png";
 import grupos from "@/assets/funcionalidades/grupos.png";
 import login from "@/assets/funcionalidades/login.png";
 import setores from "@/assets/funcionalidades/setores.png";
+import api from "@/assets/funcionalidades/api.png";
 const capabilities = [
   {
     icon: Lock,
     title: "Controle de Acesso",
-    description: "Autenticação centralizada para controle de acesso seguro ao repositório institucional.",
+    description: "Autenticação centralizada para controle de acesso seguro ao repositório institucional",
     image: login
   },
   {
     icon: FolderTree,
     title: "Setores e Subsetores",
-    description: "Gerenciamento completo da estrutura hierárquica da instituição.",
+    description: "Gerenciamento completo da estrutura hierárquica da instituição",
     image: setores
   },
   {
     icon: Library,
     title: "Gestão de Bibliotecas",
-    description: "Administração de bibliotecas digitais vinculadas a setores específicos.",
+    description: "Administração de bibliotecas digitais vinculadas a setores específicos",
     image: bibliotecas
   },
   {
     icon: FileText,
     title: "Ciclo de Documentos",
-    description: "Controle total sobre a submissão, mapeamento e publicação de documentos.",
+    description: "Controle total sobre a submissão, mapeamento e publicação de documentos",
     image: documento
   },
   {
     icon: Users,
     title: "Usuários e Grupos",
-    description: "Gestão de perfis e agrupamentos de usuários com permissões granulares.",
+    description: "Gestão de perfis e agrupamentos de usuários com permissões granulares",
     image: grupos
+  },
+  {
+    icon: Code2,
+    title: "Api",
+    description: "Interface de programação de aplicativos para integração outros com sistemas",
+    image: api
   }
 ];
 
@@ -144,17 +151,20 @@ export const FeaturesSection = () => {
                 >
                   <div className="bg-card rounded-2xl border border-border shadow-card overflow-hidden h-full">
                     {/* Image Placeholder */}
-                    <div className="w-full h-48 sm:h-56 bg-gradient-to-br from-primary/5 to-secondary/50 flex items-center justify-center border-b border-border">
+                    <div className="w-full overflow-hidden h-48 sm:h-56 bg-gradient-to-br from-primary/5 to-secondary/50 flex items-start justify-center border-b border-border">
                       <img className="w-full" src={capabilities[currentSlide].image} alt={capabilities[currentSlide].title} />
                     </div>
                     <div className="p-6 sm:p-8">
-                      <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                        {(() => {
-                          const Icon = capabilities[currentSlide].icon;
-                          return <Icon className="w-6 h-6 text-primary" />;
-                        })()}
+                      <div className="flex items-center flex-row md:items-center gap-4">
+                        <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                          {(() => {
+                            const Icon = capabilities[currentSlide].icon;
+                            return <Icon className="w-6 h-6 text-primary" />;
+                          })()}
+                        </div>
+                        <h3 className="text-xl font-bold text-foreground mb-3">{capabilities[currentSlide].title}</h3>
                       </div>
-                      <h3 className="text-xl font-bold text-foreground mb-3">{capabilities[currentSlide].title}</h3>
+
                       <p className="text-muted-foreground leading-relaxed">{capabilities[currentSlide].description}</p>
                     </div>
                   </div>
