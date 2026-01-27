@@ -30,11 +30,12 @@ export const PitchSection = () => {
         >
           <iframe
             className="w-full h-full"
-            src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=placeholder" 
+            src="https://www.youtube.com/embed/HgEkECu-Gh4?si=RgOWQNQTE_Es9NHS"
             title="Apresentação HipoRepo"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
           />
+         
         </motion.div>
       </div>
     </section>
