@@ -8,7 +8,8 @@ const navLinks = [
   { href: "#hero", label: "Início" },
   { href: "#differential", label: "Diferenciais" },
   { href: "#features", label: "Funcionalidades" },
-    { href: "#audience", label: "Equipe" }
+  { href: "#pitch", label: "Apresentação" },
+  { href: "#team", label: "Equipe" }
 ];
 
 export const Header = () => {
@@ -75,7 +76,7 @@ export const Header = () => {
                   {link.label}
                 </a>
               ))}
-              
+
             </nav>
           </motion.div>
         )}

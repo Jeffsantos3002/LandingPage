@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { FileCode, Scale, LifeBuoy, LogIn } from "lucide-react";
 import logo from "@/assets/hiporepo-logo.png";
+import dcompLogo from "@/assets/dcomp-logo.png";
+import ufsLogo from "@/assets/logotipo-ufs.png";
 
 const footerLinks = [
   { icon: FileCode, label: "Documentação da API", href: "#" },
@@ -18,7 +20,7 @@ export const Footer = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="grid md:grid-cols-2 lg:grid-cols-4 gap-12"
+          className="flex flex-col sm:flex-row items-center justify-between gap-8"
         >
           {/* Brand */}
           <div className="lg:col-span-2">
@@ -30,28 +32,12 @@ export const Footer = () => {
               A solução definitiva para o caos de documentos em grandes instituições.
               Organização hierárquica encontra controle centralizado.
             </p>
-            <p className="text-sm text-background/50">
-              Desenvolvido em parceria com a Universidade Federal de Sergipe (UFS) e o Departamento de Computação (DCOMP).
-            </p>
+            <div className="flex items-center gap-4">
+              <img src={ufsLogo} alt="UFS" className="w-24 " />
+              <img src={dcompLogo} alt="DCOMP" className="w-24" />
+            </div>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h4 className="font-heading font-semibold text-lg mb-4 text-background">Recursos</h4>
-            <ul className="space-y-3">
-              {footerLinks.map((link, index) => (
-                <li key={index}>
-                  <a
-                    href={link.href}
-                    className="flex items-center gap-2 text-background/70 hover:text-primary transition-colors"
-                  >
-                    <link.icon className="w-4 h-4" />
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
 
           {/* Contact */}
           <div>
@@ -60,10 +46,11 @@ export const Footer = () => {
               Pronto para organizar seus documentos institucionais?
             </p>
             <a
-              href="#"
+              href="mailto:hiporepo@dcomp.ufs.br"
+              target="_blank"
               className="inline-flex items-center gap-2 px-6 py-3 gradient-hero rounded-lg font-semibold text-primary-foreground hover:opacity-90 transition-opacity"
             >
-              Contatar Vendas
+              Contatar
             </a>
           </div>
         </motion.div>
@@ -79,14 +66,7 @@ export const Footer = () => {
           <p className="text-sm text-background/50">
             © {new Date().getFullYear()} HipoRepo. Todos os direitos reservados.
           </p>
-          <div className="flex items-center gap-6">
-            <a href="#" className="text-sm text-background/50 hover:text-primary transition-colors">
-              Política de Privacidade
-            </a>
-            <a href="#" className="text-sm text-background/50 hover:text-primary transition-colors">
-              Política de Cookies
-            </a>
-          </div>
+         
         </motion.div>
       </div>
     </footer>

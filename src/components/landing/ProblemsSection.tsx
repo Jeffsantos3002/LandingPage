@@ -26,7 +26,7 @@ const problems = [
 
 export const ProblemsSection = () => {
   return (
-    <section id="features" className="py-20 lg:py-32 bg-secondary/30">
+    <section id="differential" className="py-20 lg:py-32 bg-secondary/30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <motion.div

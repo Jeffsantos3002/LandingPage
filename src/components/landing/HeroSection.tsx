@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Code2, Building2, FolderTree } from "lucide-react";
-import logo from "@/assets/hiporepo-logo.png";
+import fileHome from "@/assets/home.png";
 
 export const HeroSection = () => {
   return (
@@ -29,13 +29,13 @@ export const HeroSection = () => {
             </h1>
 
             <p className="text-lg lg:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-8 leading-relaxed">
-              O HipoRepo vai além de repositórios genéricos. Aqui você encontra uma 
+              O HipoRepo vai além de repositórios genéricos. Aqui você encontra uma
               <strong className="text-foreground"> arquitetura organizacional hierárquica,</strong>{" "}
               que se adapta à estrutura do seu negócio, garantindo autonomia para cada departamento com a segurança de uma gestão centralizada.
             </p>
 
             {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <a href="https://hiporepofront.vercel.app/" target="_blank" className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Button variant="hero" size="xl">
                 Comece Agora
                 <ArrowRight className="w-5 h-5" />
@@ -44,7 +44,7 @@ export const HeroSection = () => {
                 <Code2 className="w-5 h-5" />
                 Documentação da API
               </Button> */}
-            </div>
+            </a>
 
             {/* Stats */}
             <motion.div
@@ -81,36 +81,12 @@ export const HeroSection = () => {
                 className="flex justify-center"
               >
                 <img
-                  src={logo}
-                  alt="Mascote HipoRepo"
-                  className="w-64 h-64 lg:w-80 lg:h-80 drop-shadow-2xl"
-                />
+                  className="rounded-xl border border-border shadow-card"
+                  src={fileHome}
+                ></img>
               </motion.div>
 
-              {/* Floating elements */}
-              <motion.div
-                animate={{ y: [0, -8, 0], x: [0, 5, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                className="absolute top-4 right-4 lg:top-8 lg:right-16 bg-card shadow-card rounded-xl p-4 border border-border"
-              >
-                <FolderTree className="w-8 h-8 text-primary" />
-              </motion.div>
-
-              <motion.div
-                animate={{ y: [0, 8, 0], x: [0, -5, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                className="absolute bottom-8 left-4 lg:bottom-16 lg:left-8 bg-card shadow-card rounded-xl p-4 border border-border"
-              >
-                <Code2 className="w-8 h-8 text-primary" />
-              </motion.div>
-
-              <motion.div
-                animate={{ y: [0, -6, 0] }}
-                transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 0.3 }}
-                className="absolute bottom-4 right-8 lg:bottom-8 lg:right-8 bg-primary/10 rounded-xl px-4 py-2"
-              >
-                <span className="text-sm font-semibold text-primary">API-First</span>
-              </motion.div>
+              
             </div>
           </motion.div>
         </div>
