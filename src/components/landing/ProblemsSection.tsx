@@ -5,12 +5,12 @@ const problems = [
   {
     icon: FolderTree,
     problem: "Sistemas e pastas pouco organizadas que não refletem a hierarquia institucional.",
-    solution: "Estrutura hierárquica nativa organizada por Setores e Subsetores, permitindo que cada um deles tenha suas próprias Bibliotecas de documentos dedicadas, espelhando fielmente o organograma real.",
+    solution: "Estrutura hierárquica nativa organizada por setores e subsetores, permitindo que cada um deles tenha suas próprias bibliotecas de documentos dedicadas, espelhando fielmente o organograma real.",
   },
   {
     icon: Shield,
     problem: "Insegurança na informação e falta de controle sobre o escopo de publicação.",
-    solution: "Governança através de papéis definidos (Administrador, Curador e criador de conteúdo) permitindo o gerenciamento de documentos dentro de escopos determinados para cada setor ou unidade.",
+    solution: "Governança através de papéis definidos (administrador, curador e usuários que depositam documentos) permitindo o gerenciamento de documentos dentro de escopos determinados para cada setor ou subsetor.",
   },
   {
     icon: Plug,
