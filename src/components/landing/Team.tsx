@@ -34,7 +34,6 @@ const devTeam = [
 const consultingTeam = [
   { "nome": "André Britto de Carvalho", "foto": memberAndre },
   { "nome": "Debora Maria Coelho Nascimento", "foto": memberDebora },
-  { "nome": "Edilayne Meneses Salgueiro", "foto": memberEdilayne },
   { "nome": "Michel dos Santos Soares", "foto": memberMichel },
   { "nome": "Ricardo José Paiva de Britto Salgueiro", "foto": memberRicardo },
   { "nome": "Rogério Patricío Chagas do Nascimento", "foto": memberRogério },
@@ -42,11 +41,15 @@ const consultingTeam = [
   { "nome": "Eric Bernardes Chagas Barros", "foto": "" },
 ];
 
+const domainTeam = [
+    { "nome": "Edilayne Meneses Salgueiro", "foto": memberEdilayne },
+  ];
+
 export const TeamSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % 2);
-  const prevSlide = () => setCurrentSlide((prev) => (prev === 0 ? 1 : 0));
+  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % 3);
+  const prevSlide = () => setCurrentSlide((prev) => (prev === 0 ? 2 : prev - 1));
 
   return (
     <section id="team" className="py-20 lg:py-32">
@@ -105,7 +108,7 @@ export const TeamSection = () => {
                     ))}
                   </div>
                 </motion.div>
-              ) : (
+              ) : currentSlide === 1 ? (
                 <motion.div
                   key="consulting"
                   initial={{ opacity: 0, x: 20 }}
@@ -114,7 +117,7 @@ export const TeamSection = () => {
                   transition={{ duration: 0.3 }}
                 >
                   <h3 className="font-heading text-2xl font-bold text-center mb-10 text-foreground">
-                    Consultoria Técnica
+                    Consultoria de Domínio
                   </h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 justify-items-center">
                     {consultingTeam.map((member, index) => (
@@ -122,7 +125,25 @@ export const TeamSection = () => {
                     ))}
                   </div>
                 </motion.div>
-              )}
+              ) : (
+                <motion.div
+                  key="domain"
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -20 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <h3 className="font-heading text-2xl font-bold text-center mb-10 text-foreground">
+                    Equipe de Domínio
+                  </h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 justify-items-center">
+                    {domainTeam.map((member, index) => (
+                      <TeamMember key={index} name={member.nome} photoUrl={member.foto} index={index} />
+                    ))}
+                  </div>
+                </motion.div>
+              ) 
+              }
             </AnimatePresence>
           </div>
 
@@ -139,6 +160,12 @@ export const TeamSection = () => {
               className={`h-2.5 rounded-full transition-all duration-300 ${currentSlide === 1 ? "w-8 bg-primary" : "w-2.5 bg-primary/20 hover:bg-primary/40"
                 }`}
               aria-label="Consultoria Técnica"
+            />
+            <button
+              onClick={() => setCurrentSlide(2)}
+              className={`h-2.5 rounded-full transition-all duration-300 ${currentSlide === 2 ? "w-8 bg-primary" : "w-2.5 bg-primary/20 hover:bg-primary/40"
+                }`}
+              aria-label="Equipe de Domínio"
             />
           </div>
         </div>
