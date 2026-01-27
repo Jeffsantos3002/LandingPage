@@ -42,7 +42,7 @@ const capabilities = [
   {
     icon: Code2,
     title: "Api",
-    description: "Integração com outras ferramentas e sistemas através da APIs RESTful",
+    description: "Possibilidade de integração com outras ferramentas e sistemas através da APIs RESTful",
     image: api
   }
 ];
