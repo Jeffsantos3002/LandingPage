@@ -37,7 +37,7 @@ export const HeroSection = () => {
             {/* CTAs */}
             <a href="https://hiporepofront.vercel.app/" target="_blank" className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Button variant="hero" size="xl">
-                Comece Agora
+                Conheça
                 <ArrowRight className="w-5 h-5" />
               </Button>
               {/* <Button variant="heroOutline" size="xl">

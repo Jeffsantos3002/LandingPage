@@ -34,7 +34,6 @@ const devTeam = [
 const consultingTeam = [
   { "nome": "André Britto de Carvalho", "foto": memberAndre },
   { "nome": "Debora Maria Coelho Nascimento", "foto": memberDebora },
-  { "nome": "Debora Maria Coelho Nascimento", "foto": "" },
   { "nome": "Edilayne Meneses Salgueiro", "foto": memberEdilayne },
   { "nome": "Michel dos Santos Soares", "foto": memberMichel },
   { "nome": "Ricardo José Paiva de Britto Salgueiro", "foto": memberRicardo },

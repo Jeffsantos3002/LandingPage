@@ -1,41 +1,51 @@
-import { motion } from "framer-motion";
-import { Lock, FolderTree, Library, FileText, Users, Settings, UserPlus, Code2 } from "lucide-react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Lock, FolderTree, Library, FileText, Users, Settings, UserPlus, Code2, ChevronLeft, ChevronRight } from "lucide-react";
 import logo from "@/assets/hiporepo-logo.png";
-
+import bibliotecas from "@/assets/funcionalidades/bibliotecas.png";
+import documento from "@/assets/funcionalidades/documento.png";
+import grupos from "@/assets/funcionalidades/grupos.png";
+import login from "@/assets/funcionalidades/login.png";
+import setores from "@/assets/funcionalidades/setores.png";
 const capabilities = [
   {
     icon: Lock,
     title: "Controle de Acesso",
     description: "Autenticação centralizada para controle de acesso seguro ao repositório institucional.",
+    image: login
   },
   {
     icon: FolderTree,
     title: "Setores e Subsetores",
     description: "Gerenciamento completo da estrutura hierárquica da instituição.",
+    image: setores
   },
   {
     icon: Library,
     title: "Gestão de Bibliotecas",
     description: "Administração de bibliotecas digitais vinculadas a setores específicos.",
+    image: bibliotecas
   },
   {
     icon: FileText,
     title: "Ciclo de Documentos",
     description: "Controle total sobre a submissão, mapeamento e publicação de documentos.",
+    image: documento
   },
   {
     icon: Users,
     title: "Usuários e Grupos",
     description: "Gestão de perfis e agrupamentos de usuários com permissões granulares.",
-  },
-  {
-    icon: Settings,
-    title: "Metadados e Esquemas",
-    description: "Configuração de esquemas de metadados e vocabulários controlados para o acervo.",
-  },
+    image: grupos
+  }
 ];
 
 export const FeaturesSection = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % capabilities.length);
+  const prevSlide = () => setCurrentSlide((prev) => (prev === 0 ? capabilities.length - 1 : prev - 1));
+
   return (
     <section id="features" className="py-20 lg:py-32 bg-secondary/30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -96,30 +106,74 @@ export const FeaturesSection = () => {
 
           </div>
 
-          {/* Right - capabilities grid */}
+          {/* Right - capabilities carousel */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="grid sm:grid-cols-2 gap-4"
+            className="relative w-full max-w-lg mx-auto lg:max-w-xl"
           >
-            {capabilities.map((cap, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: 0.1 * index }}
-                className="bg-card p-5 rounded-xl border border-border shadow-card hover:shadow-card-hover transition-all duration-300 group"
-              >
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-3 group-hover:bg-primary/20 transition-colors">
-                  <cap.icon className="w-5 h-5 text-primary" />
-                </div>
-                <h4 className="font-semibold text-foreground mb-1">{cap.title}</h4>
-                <p className="text-sm text-muted-foreground">{cap.description}</p>
-              </motion.div>
-            ))}
+            {/* Navigation Buttons */}
+            <button
+              onClick={prevSlide}
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-12 p-2 rounded-full bg-card border border-border shadow-sm hover:bg-secondary transition-colors z-10 hidden sm:flex"
+              aria-label="Anterior"
+            >
+              <ChevronLeft className="w-6 h-6 text-foreground" />
+            </button>
+
+            <button
+              onClick={nextSlide}
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-12 p-2 rounded-full bg-card border border-border shadow-sm hover:bg-secondary transition-colors z-10 hidden sm:flex"
+              aria-label="Próximo"
+            >
+              <ChevronRight className="w-6 h-6 text-foreground" />
+            </button>
+
+            {/* Slides */}
+            <div className="min-h-[400px]">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentSlide}
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -20 }}
+                  transition={{ duration: 0.3 }}
+                  className="h-full"
+                >
+                  <div className="bg-card rounded-2xl border border-border shadow-card overflow-hidden h-full">
+                    {/* Image Placeholder */}
+                    <div className="w-full h-48 sm:h-56 bg-gradient-to-br from-primary/5 to-secondary/50 flex items-center justify-center border-b border-border">
+                      <img className="w-full" src={capabilities[currentSlide].image} alt={capabilities[currentSlide].title} />
+                    </div>
+                    <div className="p-6 sm:p-8">
+                      <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                        {(() => {
+                          const Icon = capabilities[currentSlide].icon;
+                          return <Icon className="w-6 h-6 text-primary" />;
+                        })()}
+                      </div>
+                      <h3 className="text-xl font-bold text-foreground mb-3">{capabilities[currentSlide].title}</h3>
+                      <p className="text-muted-foreground leading-relaxed">{capabilities[currentSlide].description}</p>
+                    </div>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
+            </div>
+
+            {/* Dots Navigation */}
+            <div className="flex justify-center gap-2 mt-8">
+              {capabilities.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentSlide(index)}
+                  className={`h-2 rounded-full transition-all duration-300 ${currentSlide === index ? "w-6 bg-primary" : "w-2 bg-primary/20 hover:bg-primary/40"
+                    }`}
+                  aria-label={`Slide ${index + 1}`}
+                />
+              ))}
+            </div>
           </motion.div>
         </div>
       </div>

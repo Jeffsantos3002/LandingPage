@@ -5,7 +5,7 @@ const problems = [
   {
     icon: FolderTree,
     problem: "Sistemas e pastas pouco organizadas que não refletem a hierarquia institucional.",
-    solution: "Estrutura hierárquica nativa dividida em Setores, Subsetores e Bibliotecas que espelham o organograma real",
+    solution: "Estrutura hierárquica nativa organizada por Setores e Subsetores, permitindo que cada um deles tenha suas próprias Bibliotecas de documentos dedicadas, espelhando fielmente o organograma real.",
   },
   {
     icon: Shield,
