@@ -117,7 +117,7 @@ export const TeamSection = () => {
                   transition={{ duration: 0.3 }}
                 >
                   <h3 className="font-heading text-2xl font-bold text-center mb-10 text-foreground">
-                    Consultoria de Domínio
+                    Consultoria Técnica
                   </h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 justify-items-center">
                     {consultingTeam.map((member, index) => (
