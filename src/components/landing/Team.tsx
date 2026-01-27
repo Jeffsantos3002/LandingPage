@@ -2,7 +2,8 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, User } from "lucide-react";
 import memberAndre from "@/assets/equipe/andré.png";
-import memberDebora from "@/assets/equipe/debora.png";
+import memberDebora from "@/assets/equipe/Debora.png";
+// import memberDebora from "@/assets/equipe/debora.png";
 import memberWayner from "@/assets/equipe/wayner.png";
 import memberMichel from "@/assets/equipe/michel.png";
 import memberRogério from "@/assets/equipe/rogerio.png";
@@ -33,6 +34,7 @@ const devTeam = [
 const consultingTeam = [
   { "nome": "André Britto de Carvalho", "foto": memberAndre },
   { "nome": "Debora Maria Coelho Nascimento", "foto": memberDebora },
+  { "nome": "Debora Maria Coelho Nascimento", "foto": "" },
   { "nome": "Edilayne Meneses Salgueiro", "foto": memberEdilayne },
   { "nome": "Michel dos Santos Soares", "foto": memberMichel },
   { "nome": "Ricardo José Paiva de Britto Salgueiro", "foto": memberRicardo },
