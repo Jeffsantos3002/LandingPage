@@ -5,7 +5,7 @@ import logo from "@/assets/hiporepo-logo.png";
 
 export const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center pt-20 lg:pt-0 gradient-hero-subtle overflow-hidden">
+    <section id="hero" className="relative min-h-screen flex items-center pt-20 lg:pt-0 gradient-hero-subtle overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 -right-32 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
@@ -21,18 +21,6 @@ export const HeroSection = () => {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="text-center lg:text-left"
           >
-            {/* Badge */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent border border-primary/20 mb-6"
-            >
-              <Building2 className="w-4 h-4 text-primary" />
-              <span className="text-sm font-medium text-accent-foreground">
-                Desenvolvido com UFS & DCOMP
-              </span>
-            </motion.div>
 
             <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6">
               <span className="text-gradient">Controle Hierárquico</span>
@@ -40,11 +28,10 @@ export const HeroSection = () => {
               para Documentos Institucionais
             </h1>
 
-            <p className="text-lg lg:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-8 leading-relaxed gap-1">
-              O HipoRepo vai além de repositórios genéricos, espelhando o organograma real da sua instituição  
-              <strong className="text-foreground ml-1"> Setores</strong>,{" "}
-              <strong className="text-foreground">Subsetores</strong>, e{" "}
-              <strong className="text-foreground">Bibliotecas</strong> com controle granular de permissões e fluxos de governança.
+            <p className="text-lg lg:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-8 leading-relaxed">
+              O HipoRepo vai além de repositórios genéricos. Aqui você encontra uma 
+              <strong className="text-foreground"> arquitetura organizacional hierárquica,</strong>{" "}
+              que se adapta à estrutura do seu negócio, garantindo autonomia para cada departamento com a segurança de uma gestão centralizada.
             </p>
 
             {/* CTAs */}
@@ -53,10 +40,10 @@ export const HeroSection = () => {
                 Comece Agora
                 <ArrowRight className="w-5 h-5" />
               </Button>
-              <Button variant="heroOutline" size="xl">
+              {/* <Button variant="heroOutline" size="xl">
                 <Code2 className="w-5 h-5" />
                 Documentação da API
-              </Button>
+              </Button> */}
             </div>
 
             {/* Stats */}

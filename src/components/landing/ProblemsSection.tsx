@@ -4,13 +4,13 @@ import { X, Check, FolderTree, Shield, Plug, FileCheck } from "lucide-react";
 const problems = [
   {
     icon: FolderTree,
-    problem: "Drives genéricos não refletem a hierarquia da minha organização.",
-    solution: "Suporte nativo para Departamentos, Subdepartamentos e Bibliotecas que espelham seu organograma real.",
+    problem: "Sistemas e pastas pouco organizadas que não refletem a hierarquia institucional.",
+    solution: "Estrutura hierárquica nativa dividida em Setores, Subsetores e Bibliotecas que espelham o organograma real",
   },
   {
     icon: Shield,
-    problem: "Não há controle sobre o que é publicado.",
-    solution: "Governança através de papéis definidos: Editores de Conteúdo enviam, Curadores *************",
+    problem: "Insegurança na informação e falta de controle sobre o escopo de publicação.",
+    solution: "Governança através de papéis definidos (Administrador, Curador e criador de conteúdo) permitindo o gerenciamento de documentos dentro de escopos determinados para cada setor ou unidade.",
   },
   {
     icon: Plug,
@@ -19,8 +19,8 @@ const problems = [
   },
   {
     icon: FileCheck,
-    problem: "********************************************",
-    solution: "*****************************************************************************",
+    problem: "Documentos sem padrão técnico, formatos inválidos ou metadados incompletos.",
+    solution: "Padrões técnicos e metadados padronizados para garantir a qualidade e interoperabilidade dos documentos.",
   },
 ];
 
@@ -70,7 +70,7 @@ export const ProblemsSection = () => {
                     <span className="text-xs font-semibold uppercase tracking-wider text-destructive mb-1 block">
                       O Problema
                     </span>
-                    <p className="text-foreground font-medium"></p>
+                    <p className="text-foreground font-medium">{item.problem}</p>
                   </div>
                 </div>
               </div>
@@ -85,7 +85,7 @@ export const ProblemsSection = () => {
                     <span className="text-xs font-semibold uppercase tracking-wider text-primary mb-1 block">
                       Solução HipoRepo
                     </span>
-                    <p className="text-muted-foreground"></p>
+                    <p className="text-muted-foreground">{item.solution}</p>
                   </div>
                 </div>
               </div>

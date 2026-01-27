@@ -5,10 +5,10 @@ import { Menu, X } from "lucide-react";
 import logo from "@/assets/hiporepo-logo.png";
 
 const navLinks = [
-  { href: "#features", label: "Recursos" },
-  { href: "#audience", label: "Para Você" },
-  { href: "#architecture", label: "Arquitetura" },
-  { href: "#pricing", label: "Preços" },
+  { href: "#hero", label: "Início" },
+  { href: "#differential", label: "Diferenciais" },
+  { href: "#features", label: "Funcionalidades" },
+    { href: "#audience", label: "Equipe" }
 ];
 
 export const Header = () => {
@@ -45,14 +45,7 @@ export const Header = () => {
           </nav>
 
           {/* Desktop CTAs */}
-          <div className="hidden lg:flex items-center gap-4">
-            <Button variant="ghost" size="lg">
-              Docs da API
-            </Button>
-            <Button variant="hero" size="lg">
-              Comece Agora
-            </Button>
-          </div>
+
 
           {/* Mobile Menu Button */}
           <button
@@ -82,14 +75,7 @@ export const Header = () => {
                   {link.label}
                 </a>
               ))}
-              <div className="flex flex-col gap-3 pt-4">
-                <Button variant="outline" size="lg" className="w-full">
-                  Docs da API
-                </Button>
-                <Button variant="hero" size="lg" className="w-full">
-                  Comece Agora
-                </Button>
-              </div>
+              
             </nav>
           </motion.div>
         )}
