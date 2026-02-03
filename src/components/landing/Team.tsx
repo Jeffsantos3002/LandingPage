@@ -38,11 +38,12 @@ const consultingTeam = [
   { "nome": "Ricardo José Paiva de Britto Salgueiro", "foto": memberRicardo },
   { "nome": "Rogério Patricío Chagas do Nascimento", "foto": memberRogério },
   { "nome": "Hendrik Teixeira Macedo", "foto": memberHendrik },
-  { "nome": "Eric Bernardes Chagas Barros", "foto": "" },
+   { "nome": "Edilayne Meneses Salgueiro", "foto": memberEdilayne }
+
 ];
 
 const domainTeam = [
-    { "nome": "Edilayne Meneses Salgueiro", "foto": memberEdilayne },
+  { "nome": "Eric Bernardes Chagas Barros", "foto": "" },
   ];
 
 export const TeamSection = () => {
@@ -117,7 +118,7 @@ export const TeamSection = () => {
                   transition={{ duration: 0.3 }}
                 >
                   <h3 className="font-heading text-2xl font-bold text-center mb-10 text-foreground">
-                    Consultoria Técnica
+                    Mentores
                   </h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 justify-items-center">
                     {consultingTeam.map((member, index) => (
@@ -134,7 +135,7 @@ export const TeamSection = () => {
                   transition={{ duration: 0.3 }}
                 >
                   <h3 className="font-heading text-2xl font-bold text-center mb-10 text-foreground">
-                    Especialista de Domínio
+                    Consultoria técnica
                   </h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 justify-items-center">
                     {domainTeam.map((member, index) => (

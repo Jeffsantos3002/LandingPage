@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
@@ -14,6 +14,33 @@ const navLinks = [
 
 export const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
+
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: "-40% 0px -40% 0px",
+      threshold: 0
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    }, observerOptions);
+
+    navLinks.forEach((link) => {
+      const sectionId = link.href.replace("#", "");
+      const element = document.getElementById(sectionId);
+      if (element) {
+        observer.observe(element);
+      }
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <motion.header
@@ -38,7 +65,10 @@ export const Header = () => {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-muted-foreground hover:text-foreground font-medium transition-colors"
+                className={`font-medium transition-colors ${activeSection === link.href.replace("#", "")
+                  ? "text-primary"
+                  : "text-muted-foreground hover:text-foreground"
+                  }`}
               >
                 {link.label}
               </a>
@@ -70,13 +100,15 @@ export const Header = () => {
                 <a
                   key={link.href}
                   href={link.href}
-                  className="text-muted-foreground hover:text-foreground font-medium py-2"
+                  className={`font-medium py-2 ${activeSection === link.href.replace("#", "")
+                      ? "text-primary"
+                      : "text-muted-foreground hover:text-foreground"
+                    }`}
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {link.label}
                 </a>
               ))}
-
             </nav>
           </motion.div>
         )}

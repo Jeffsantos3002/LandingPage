@@ -3,7 +3,7 @@ import { FileCode, Scale, LifeBuoy, LogIn } from "lucide-react";
 import logo from "@/assets/hiporepo-logo.png";
 import dcompLogo from "@/assets/dcomp-logo.png";
 import ufsLogo from "@/assets/logotipo-ufs.png";
-
+import stiLogo from "@/assets/sti.png";
 const footerLinks = [
   { icon: FileCode, label: "Documentação da API", href: "#" },
   { icon: Scale, label: "Termos de Uso", href: "#" },
@@ -34,6 +34,7 @@ export const Footer = () => {
             </p>
             <div className="flex items-center gap-4">
               <img src={ufsLogo} alt="UFS" className="w-24 " />
+               <img src={stiLogo} alt="STI" className="w-44" />
               <img src={dcompLogo} alt="DCOMP" className="w-24" />
             </div>
           </div>
@@ -42,16 +43,23 @@ export const Footer = () => {
           {/* Contact */}
           <div>
             <h4 className="font-heading font-semibold text-lg mb-4 text-background">Entre em Contato</h4>
-            <p className="text-background/70 mb-4">
+            <p className="text-background/70 mb-4 ">
               Pronto para organizar seus documentos institucionais?
             </p>
-            <a
-              href="mailto:hiporepo@dcomp.ufs.br"
-              target="_blank"
-              className="inline-flex items-center gap-2 px-6 py-3 gradient-hero rounded-lg font-semibold text-primary-foreground hover:opacity-90 transition-opacity"
-            >
-              Contatar
-            </a>
+            <div className="flex flex-col gap-2 ">
+              <p className="text-background/70 ">
+                Nosso contato
+              </p>
+
+              <a
+                href="mailto:edilayne@dcomp.ufs.br"
+                target="_blank"
+                className="inline-flex items-center gap-2 px-6 py-3 gradient-hero rounded-lg font-semibold text-primary-foreground hover:opacity-90 transition-opacity w-fit"
+              >
+                edilayne@dcomp.ufs.br
+              </a>
+            </div>
+
           </div>
         </motion.div>
 
@@ -66,7 +74,7 @@ export const Footer = () => {
           <p className="text-sm text-background/50">
             © {new Date().getFullYear()} HipoRepo. Todos os direitos reservados.
           </p>
-         
+
         </motion.div>
       </div>
     </footer>
